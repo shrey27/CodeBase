@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap:wrap;
+    max-width: 400px;
+}
+
+.square{
+    background: #1d1d1d;
+    /* background or background-color
+        background is umbrella property for all the
+        sub properties i.e. color,size, repeat etc.
+    */
+    box-shadow:0 0 2px #000;
+    height: 16px;
+    width: 16px;
+    margin: 2px;
+    transition: 1s ease-out;
+}
+/* 
+if you use transition in .square without
+transition-duration in .square:hover
+then on every hover it will take 1 sec to ease and then 
+on hover out 1 sec to ease
+*/
+.square:hover{
+    transition-duration: 0s;
+}
+/* 
+this makes sure that when you hover over a block
+then transition takes place immediately
+*/
+
+/* 
+Note: transition property is made of 4 properties,
+1.) transition-duration: on hover => 0s
+2.) transition-delay: 0s
+3.) transition-property: background color
+4.) transition-timing-function: ease-out
+*/

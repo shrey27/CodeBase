@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .kinetic {
+    position: relative;
+    height: 100px;
+    width: 100px;
+  }
+  
+  .kinetic::after {
+    content: '';
+    position: absolute;
+    border: 50px solid transparent;
+    border-bottom-color: rgb(216, 14, 14);
+    animation: rotateA 2s linear infinite 0.5s;
+  }
+  
+  .kinetic::before {
+    content: '';
+    position: absolute;
+    border: 50px solid transparent;
+    border-bottom-color: rgb(240, 235, 235); 
+    transform: rotate(90deg);
+    animation: rotateB 2s linear infinite;
+  }
+  
+  /* 
+  before and after are simply two addistional classes
+  to kinetic object
+  both have a border-bottom
+  check the border-bottom property on w3, you will
+  find it the shape of border on all side of a div is
+  trapizoidal, so if width is increased to 50 px
+  it looks like a triangle.
+
+  before object is rotated by 90 deg clockwise
+
+  and animation is put on both before and after 
+  objects
+  */
+  
+  @keyframes rotateA {
+    0%,
+    25% {
+      transform: rotate(0deg);
+    }
+  
+    50%,
+    75% {
+      transform: rotate(180deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes rotateB {
+    0%,
+    25% {
+      transform: rotate(90deg);
+    }
+  
+    50%,
+    75% {
+      transform: rotate(270deg);
+    }
+  
+    100% {
+      transform: rotate(450deg);
+    }
+  }
